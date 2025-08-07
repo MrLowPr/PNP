@@ -1,0 +1,104 @@
+/* Reset & dasar */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #e0e0e0;
+  background: url('assets/bg.jpg') center/cover no-repeat fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Kartu perkenalan dengan efek 3D flip */
+.container { perspective: 1000px; }
+.card {
+  width: 320px;
+  height: 420px;
+  margin: 20px;
+}
+.card-inner {
+  width:100%; height:100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute; width:100%; height:100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+}
+.front h1 {
+  font-size: 2em;
+  color: #00e5ff;
+  text-shadow: 0 0 10px #00e5ff;
+}
+.front h2 {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #b0eaff;
+}
+.back {
+  transform: rotateY(180deg);
+}
+.back p {
+  text-align: center;
+  line-height: 1.5em;
+  margin-bottom: 20px;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(45deg, #00e5ff, #4caf50);
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.btn:hover {
+  background: linear-gradient(45deg, #4caf50, #00e5ff);
+  box-shadow: 0 0 15px #00e5ff;
+}
+
+/* Section kontak */
+#contact {
+  margin-top: 50px;
+  background: rgba(0,0,0,0.7);
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+}
+#contact h3 {
+  color: #00e5ff;
+  text-align: center;
+  margin-bottom: 15px;
+}
+#contact input, #contact textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+}
+#contact button {
+  width: 100%;
+}
+#status {
+  margin-top: 10px;
+  text-align: center;
+  color: #b0eaff;
+}
